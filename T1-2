@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <string.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void CopyString(char* str1, char* str2);
+
+int main(int argc, char** argv) {
+	int task_num;
+	printf ("Enter the task number: \n");
+	scanf("%d", &task_num);
+	
+	if (task_num==1)
+	{
+		char Str[100], CopyStr[100];
+ 
+  	    printf("\n Please Enter any String :  ");
+  	    gets(Str);
+ 
+	    CopyString(Str, CopyStr);
+	
+	    printf("\n Original String in Str variable   = %s", Str);
+  	    printf("\n String that we copied into CopyStr = %s", CopyStr);
+  	}
+  	if (task_num==2)
+  	{
+  		char str[1000], *ptr;
+        int i, len;
+        printf("Enter a string: ");
+        gets(str);
+        ptr = str;
+        for(i=0;i<1000;i++){
+            if(*ptr == '\0')  break;
+            ptr++;
+        }
+        len = i;
+        ptr--;
+        printf("Reversed String: ");
+        for(i=len; i>0; i--){
+            printf("%c",*ptr--);
+        }
+	}
+	return 0;
+}
+
+void CopyString(char* str1, char* str2)
+{
+	int i = 0;
+ 
+  	for (i = 0; str1[i]!='\0'; i++)
+  	{
+  		str2[i] = str1[i];
+  	}
+	str2[i] = '\0';
+}
